@@ -4,37 +4,147 @@
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
 <!-- Google font: Montserrat Light, 300 -->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&display=swap" rel="stylesheet"> 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+<!-- My style sheet -->
+<link rel="stylesheet" href="./css/home.css">
+
+
 <title>Conor Carmichael</title>
+
 </head>
       <body>
 
             <div class='page-header'>
-                  <h1>Conor Carmichael's Webpage 
-                        <small>Information on recent projects.</small>
+                  <h1>
+                        Conor Carmichael's Webpage: 
+                        <small>Information on recent projects, about, contact.</small>
                   </h1>
             </div>
 
             <!-- Navbar -->
             <nav class='navbar navbar-light bg-light'>
-                  <a class='nav-link'>Resume</a>
+                  <a class='nav-link' href=''>Home</a>
+                  <a class='nav-link' href=''>Resume</a>
                   <a class='nav-link'>Education</a>
                   <a class='nav-link'>Projects</a>
                   <a class='nav-link'>MSc Project Blog</a>
                   <a class='nav-link'>Contact</a>
-
             </nav>
 
-            <!-- Image -->
+            <!-- Main Content -->
+            <div class='container-fluid' id='main-content'>
+                  <div class='row' id='main-conten-row-one'>
+                        
+                        <!-- Image -->
+                        <div class='col-sm-4'>
+                              <img src="./resources/headshot.png" class="rounded-circle" alt="self image">
+                        </div>
+                        
+                        <!-- About -->
+                        <div class='col-sm-4'>
+                              <h2>About me:</h2>
+                              <!-- Description -->
+                              <p>
+                                    I have wide ranging interests, and really enjoy diving in and learning about new topics. I have been playing guitar (with some decently long breaks) since grade five. I enjoy learning music theory, writing, listening- all things music really.
+                                    I really enjoy travelling- discovered while I was fortunate enough to spend the Spring '18 semester abroad at UofG. This influenced my decision to return for my master's degree. I also enjoy playing video games, spending time with friends, and 
+                                    exercising. 
+                              </p>
+                        </div>
+                        <div class='col-sm-4'>
+
+                              <h2>Interests</h2>
+
+                              <div class="accordion" id="accordionExample">
+                                    <div class="card">
+                                          <div class="card-header" id="headingOne">
+                                                <h5 class="mb-0">
+                                                      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                                            Programming
+                                                      </button>
+                                                </h5>
+                                          </div>
+                                    
+                                          <div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#accordionExample">
+                                                <div class="card-body">
+                                                      Primarily experienced using: Python, Java, JavaScript (Angular, jQuery, React). As a result of my MSc project, I am very interested in robotics. I have been developing skills and interest in machine learning, deep learning, and general AI.
+                                                </div>
+                                          </div>
+                                    </div>
+                                    <div class="card">
+                                          <div class="card-header" id="headingTwo">
+                                                <h5 class="mb-0">
+                                                      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                            Music
+                                                      </button>
+                                                </h5>
+                                          </div>
+                                          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                                <div class="card-body">
+                                                      Enjoy writing, listening, jamming, going to concerts, and discussing!
+                                                </div>
+                                          </div>
+                                    </div>
+
+                                    <div class="card">
+                                          <div class="card-header" id="headingThree">
+                                          <h5 class="mb-0">
+                                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                      Video games
+                                                </button>
+                                          </h5>
+                                          </div>
+                                          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                                <div class="card-body">
+                                                      Recently, playing Valorant. Generally I mostly play PC games and frequently shooters or competitive games.                                       
+                                                </div>
+                                          </div>      
+                                    </div>
+
+                                    <div class="card">
+                                          <div class="card-header" id="headingFour">
+                                                <h5 class="mb-0">
+                                                      <button class="btn btn-link collapsed type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                                            Exercising
+                                                      </button>
+                                                </h5>
+                                          </div>
+                                    
+                                          <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                                                <div class="card-body">
+                                                      Love playing pickup basketball, soccer, and going to the gym.
+                                                </div>
+                                          </div>
+                                    </div>
+
+                                    <div class="card">
+                                          <div class="card-header" id="headingFive">
+                                                <h5 class="mb-0">
+                                                      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                                            Travelling
+                                                      </button>
+                                                </h5>
+                                          </div>
+                                    
+                                          <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                                                <div class="card-body">
+                                                      Have been to several countries in Europe, and hope to see many more!
+                                                </div>
+                                          </div>
+                                    </div>
+
+                              </div>
 
 
-            <!-- About -->
+                        </div>
 
-            <!-- Descrip -->
+                  </div>
+            </div><!-- End Main Content-->
 
 
 
