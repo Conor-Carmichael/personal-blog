@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+      <head>
+            <!-- Required meta tags -->
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+            <!-- Google font: Montserrat Light, 300 -->
+            <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&display=swap" rel="stylesheet"> 
+            <!-- Bootstrap CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+            <!-- My style sheet -->
+            <link rel="stylesheet" href="./css/home.css">
+
+
+            <title>Conor Carmichael</title>
+
+      </head>
+      <body>
+
+            <!-- Navbar -->
+            <nav class='navbar navbar-light bg-light'>
+                <a class='nav-link' href=''>Home</a>
+                <a class='nav-link' >Resume</a>
+                <a class='nav-link'>Education</a>
+                <a class='nav-link'>Projects</a>
+                <a class='nav-link' href='./project-home.html'>MSc Project Blog</a>
+                <a class='nav-link'>Contact</a>
+            </nav>
+
+
+            <!-- Main Content -->
+            <img src='./resources/msc-project-images/museum_video_frame.png' />
+            <p style='text-align: right; margin-right: 2em;'><i>One frame from a video of the robots view.</i></p>
+
+
+            <!-- ROW FOR INTRODUCTION -->
+
+
+            <div class='container-fluid' id='main-content'>
+                <div class='row' class='blog-row' id='main-content-row-one'>
+                    <div class='col-sm-6 offset-sm-3'>
+                        <h1><b>Idea:</b> Enabling autonomous navigation, with a simulated 360 degee camera.</h1>
+                        <h3 style="margin-top: 1em; margin-bottom: 1em;"><small>A project for completion of the MSc Data Science program, advised by Dr. Jan Paul Siebert.</small></h3>
+                        <p><i>Last updated: 2020-08-21</i></p>
+                        <p><br>
+                            The main idea of this project was to use a 360&#176;(equirectangular) camera to enable navigation in a simulated environment. However, the Gazebo simulation software does not directly support or have plugins for a 360&#176; camera.
+                            Many autonomous robots will use lasers to SLAM (Simulatienous Localization and Mapping) the environment- they are precise, and give quick readings of the environment. In this project I wanted to use of Visual SLAM, as cameras feeds
+                            are able to relay more information, and camera streams could be used for more utility than just mapping. The equirectangular aspect allows for quicker mapping, and also allows for this to be done in tighter areas where it may
+                            not be as easy to navigate the robot. 
+                        </p>
+                    </div>
+   
+                </div><!--End row one-->
+
+                <!-- ROW FOR TASK 1 -->
+
+                <h2 style="margin-top: 3em; margin-bottom: 3em;">Setting up the robot.</h2>
+
+                <div class='row'  style="margin: 3em;" class='blog-row ' id='main-content-row-two'>
+                    <div class='col-sm-2 offset-sm-1' class='blog-img-block'>
+                        <img class='img-fluid' src='./resources/msc-project-images/first_bot.png'>
+                        <p>First iteration of the robot design.</p>
+                    </div>
+                    <div class='col-sm-6' class='blog-img-block'>
+                        <p>
+                            Setting up the robots URDF file was not super challenging, but did require some forsight and a few iterations of design.
+                            Taking inspiration from the many tutorials on setting up a differential drive robot, especially http://moorerobots.com/, I set up this simple robot. It consists of a rectangular prism for a body, a sphere for a caster, and two 
+                            cylinders for wheels. The cameras all positioned at the same point above the rectangular prism, and represented by the green cube. It was good enough to help me in prototyping camera setups, 
+                            but its limitations became more apparent as I tried to use it in more complex environments. Namely, it would frequently drift off to the side, which would inhibit my ability to gather clean videos for SLAMming.
+                        </p>
+                    </div>
+
+                </div>
+
+
+
+
+                <!-- ROW FOR TASK 2 -->
+
+                <h2 style="margin-top: 3em; margin-bottom: 3em;">Setting up the camera system.</h2>
+
+                <div class='row'  style="margin: 3em;" class='blog-row ' id='main-content-row-two'>
+                    <div class='col-sm-3' class='blog-img-block '>
+                        <img class='img-fluid' src='./resources/msc-project-images/positive_x.jpg'>
+                        <p><i>Camera fixed in positive x direction.</i></p>
+                    </div>
+                    <div class='col-sm-3' class='blog-img-block '>
+                       <img class='img-fluid' src='./resources/msc-project-images/negative_y.jpg'>
+                       <p><i>Camera fixed in negative y direction.</i></p>
+                    </div>
+                    <div class='col-sm-3' class='blog-img-block '>
+                        <img class='img-fluid' src='./resources/msc-project-images/positive_y.jpg'>
+                        <p><i>Camera fixed in positive y direction.</i></p>
+
+                    </div>
+                    <div class='col-sm-3' class='blog-img-block '>
+                        <img class='img-fluid' src='./resources/msc-project-images/negative_x.jpg'>
+                        <p><i>Camera fixed in negative x direction.</i></p>
+                    </div>
+                </div>
+                <div class='row' class='blog-row ' id='main-content-row-three'>
+                    <div class='col-sm-6 offset-sm-1'>
+                        <p> To simulate an all around view, I chose to set up four cameras along the +/- X and Y axes, each with a horizontal field of view of 90&#176;. Then I needed to stitch each of these cameras outputs together into one constant feed.
+                            I did this buy setting a ROS node that subscribed to all four camera feeds, synchronized them, then with OpenCV I was able to construct one new frame, with all the images combined. 
+                            I stitched them together by putting them horizontally in order as:
+                            <ul>
+                                <li>Left half of the negative X axis camera.</li>
+                                <li>Positive y axis camera.</li>
+                                <li>Positive x axis camera.</li>
+                                <li>Negative y axis camera.</li>
+                                <li>Right half of the negative X axis camera.</li>
+                            </ul>
+                            When I had the output looking right, I was able to publish the output image, and/or save the frames.
+                        </p>
+                        <p> In my first attempts at setting this up, there was a very jarring transition when objects were moving between cameras in the stitched camera feeed. To address, I applied a fisheye lens distortion to each of the four cameras.
+                            This made objects more accurately reflect their depth, and made the camera feed smoother and more effective. It was a trade off between the objects in frames appearing bent, and creating a smoother transition.
+                        </p>
+                    </div>
+                    <div class='col-sm-4'>
+                        <img src='./resources/msc-project-images/stitched_view.jpg' class='img-fluid'>
+                        <p style='text-align: right; margin-right: 2em;'> Resultant view of stitching the above frames together.</p>
+                    </div>
+
+                </div>
+                
+
+                <h2 style="margin-top: 3em; margin-bottom: 3em;">Getting OpenVSlam running.</h2>
+
+
+                <h2 style="margin-top: 3em; margin-bottom: 3em;">Interpreting OpenVSlam's output.</h2>
+
+
+
+                <h2 style="margin-top: 3em; margin-bottom: 3em;">Getting a pipeline established.</h2>
+
+
+                <h2 style="margin-top: 3em; margin-bottom: 3em;">Creating a discretized map for navigation.</h2>
+
+
+            
+            </div><!-- Main Content Div -->
+            
+      </body>
+
+</html>
