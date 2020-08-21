@@ -1,59 +1,76 @@
 <!doctype html>
 <html lang="en">
-<head>
-<!-- Required meta tags -->
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <head>
+            <!-- Required meta tags -->
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
-<!-- Google font: Montserrat Light, 300 -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&display=swap" rel="stylesheet"> 
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+            <!-- Google font: Montserrat Light, 300 -->
+            <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&display=swap" rel="stylesheet"> 
+            <!-- Bootstrap CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-<!-- My style sheet -->
-<link rel="stylesheet" href="./css/home.css">
+            <!-- My style sheet -->
+            <link rel="stylesheet" href="./css/home.css">
 
 
-<title>Conor Carmichael</title>
+            <title>Conor Carmichael</title>
 
-</head>
+      </head>
       <body>
 
             <div class='page-header'>
                   <h1>
-                        Conor Carmichael's Webpage: 
-                        <small>Information on recent projects, about, contact.</small>
+                        Conor Carmichael's Webpage
                   </h1>
             </div>
 
             <!-- Navbar -->
             <nav class='navbar navbar-light bg-light'>
                   <a class='nav-link' href=''>Home</a>
-                  <a class='nav-link' href=''>Resume</a>
+                  <a class='nav-link' >Resume</a>
                   <a class='nav-link'>Education</a>
                   <a class='nav-link'>Projects</a>
-                  <a class='nav-link'>MSc Project Blog</a>
+                  <a class='nav-link' href='./msc-project.html'>MSc Project Blog</a>
                   <a class='nav-link'>Contact</a>
             </nav>
 
             <!-- Main Content -->
             <div class='container-fluid' id='main-content'>
-                  <div class='row' id='main-conten-row-one'>
+                  <div class='row' id='main-content-row-one'>
                         
                         <!-- Image -->
-                        <div class='col-sm-4'>
+                        <div class='col-sm-4' id='headshot-col'>
                               <img src="./resources/headshot.png" class="rounded-circle" alt="self image">
                         </div>
-                        
+
+                        <div class='col-sm-4' id='glance-col'>
+                              <h2> Experiences At a Glance </h2>
+                              <ul>
+                                    <li>BSc Computer Science, 2019- University of Massachusetts Amherst</li>
+                                    <li>MSc Data Science, 2020- University of Glasgow</li>
+                                    <li>Techincal Intern at Fidelity Investments (Summer 2017, 2018)</li>
+                                    <li>Undergraduate Course Assistant for CS 121 (UMass) for Dr. Neena Thota</li>
+                              </ul>
+                        </div>
+
+
+                  </div>
+
+
+                  <div class='row' id='main-content-row-two'>
                         <!-- About -->
                         <div class='col-sm-4'>
                               <h2>About me:</h2>
                               <!-- Description -->
                               <p>
                                     I have wide ranging interests, and really enjoy diving in and learning about new topics. I have been playing guitar (with some decently long breaks) since grade five. I enjoy learning music theory, writing, listening- all things music really.
-                                    I really enjoy travelling- discovered while I was fortunate enough to spend the Spring '18 semester abroad at UofG. This influenced my decision to return for my master's degree. I also enjoy playing video games, spending time with friends, and 
-                                    exercising. 
+                                    I really enjoy travelling- discovered this while I was fortunate enough to spend the Spring '18 semester abroad at U of G. During this time I was able to spend time see amazin cities from Reykjavik, Iceland to Palermo, Italy. 
+                                    This influenced my decision to return to Glasgow for my master's degree, I enjoy being immersed in these different environments and gaining a greater perspective on the world. 
+                              </p>
+                              <p>
+                                    Professionally, I hope to work in Data Science, or as a Machine Learning Engineer (or other similar roles). My experiences in my MSc program have exposed me to and developed the necessary skills for these roles.
                               </p>
                         </div>
                         <div class='col-sm-4'>
@@ -133,7 +150,7 @@
                                     
                                           <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
                                                 <div class="card-body">
-                                                      Have been to several countries in Europe, and hope to see many more!
+                                                      Have been to several countries in Europe, and a few cities around the US. I hope to see many more around the world soon!
                                                 </div>
                                           </div>
                                     </div>
@@ -142,10 +159,9 @@
 
 
                         </div>
-
                   </div>
-            </div><!-- End Main Content-->
 
+            </div><!-- End Main Content-->
 
 
             <!-- Footer -->
