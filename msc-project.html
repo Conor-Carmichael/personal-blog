@@ -12,7 +12,7 @@
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
             <!-- My style sheet -->
-            <link rel="stylesheet" href="./css/home.css">
+            <link rel="stylesheet" href="./css/main.css">
 
 
             <title>Conor Carmichael</title>
@@ -33,7 +33,7 @@
 
             <!-- Main Content -->
             <img class='img-fluid' src='./resources/msc-project-images/museum_video_frame.png' />
-            <p style='text-align: right; margin-right: 2em;'><i>One frame from a video of the robots view.</i></p>
+            <p class="caption"><i>One frame from a video of the robots view.</i></p>
 
 
             <!-- ROW FOR INTRODUCTION -->
@@ -57,12 +57,12 @@
 
                 <!-- ROW FOR TASK 1 -->
 
-                <h2 style="margin-top: 3em; margin-bottom: 3em;">Setting up the robot.</h2>
+                <h2 class="blog-section-header">Setting up the robot</h2>
 
                 <div class='row'  style="margin: 3em;" class='blog-row ' id='main-content-row-two'>
                     <div class='col-sm-2 offset-sm-1' class='blog-img-block'>
                         <img class='img-fluid' src='./resources/msc-project-images/first_bot.png'>
-                        <p>First iteration of the robot design.</p>
+                        <p class="caption">First iteration of the robot design.</p>
                     </div>
                     <div class='col-sm-6' class='blog-img-block'>
                         <p>
@@ -80,25 +80,25 @@
 
                 <!-- ROW FOR TASK 2 -->
 
-                <h2 style="margin-top: 3em; margin-bottom: 3em;">Setting up the camera system.</h2>
+                <h2 class="blog-section-header">Setting up the camera system</h2>
 
                 <div class='row'  style="margin: 3em;" class='blog-row ' id='main-content-row-two'>
                     <div class='col-sm-3' class='blog-img-block '>
                         <img class='img-fluid' src='./resources/msc-project-images/positive_x.jpg'>
-                        <p><i>Camera fixed in positive x direction.</i></p>
+                        <p class="caption"><i>Camera fixed in positive x direction.</i></p>
                     </div>
                     <div class='col-sm-3' class='blog-img-block '>
                        <img class='img-fluid' src='./resources/msc-project-images/negative_y.jpg'>
-                       <p><i>Camera fixed in negative y direction.</i></p>
+                       <p class="caption"><i>Camera fixed in negative y direction.</i></p>
                     </div>
                     <div class='col-sm-3' class='blog-img-block '>
                         <img class='img-fluid' src='./resources/msc-project-images/positive_y.jpg'>
-                        <p><i>Camera fixed in positive y direction.</i></p>
+                        <p class="caption"><i>Camera fixed in positive y direction.</i></p>
 
                     </div>
                     <div class='col-sm-3' class='blog-img-block '>
                         <img class='img-fluid' src='./resources/msc-project-images/negative_x.jpg'>
-                        <p><i>Camera fixed in negative x direction.</i></p>
+                        <p class="caption"> <i>Camera fixed in negative x direction.</i></p>
                     </div>
                 </div>
                 <div class='row' class='blog-row ' id='main-content-row-three'>
@@ -121,23 +121,30 @@
                     </div>
                     <div class='col-sm-4'>
                         <img src='./resources/msc-project-images/stitched_view.jpg' class='img-fluid'>
-                        <p style='text-align: right; margin-right: 2em;'> Resultant view of stitching the above frames together.</p>
+                        <p class="caption"> Resultant view of stitching the above frames together.</p>
                     </div>
 
                 </div>
                 
 
-                <h2 style="margin-top: 3em; margin-bottom: 3em;">Getting OpenVSlam running.</h2>
+                <h2 class="blog-section-header">Getting OpenVSlam running</h2>
+                <div class='row' class='blog-row ' id='main-content-row-four'>
+                    <p>A very long process, but after having a robot that could move about well, and a camera feed setup, next was to begin tring to SLAM it. I chose OpenVSlam as the SLAM package to use, as it is developed with the intention
+                        of being used with an equirectangular camera. To make this work, I needed to either publish my camera feed to the expected topic, or run a shell script and feed it a video of my environment. At first, I would do the former
+                        as I began trying to get it to work, and as I began to have a more sophisticated pipeline for everything I switched to using a pre-recorded video. This was more efficient, as I would need to re-run the the script on the video 
+                        a few times, trying to get the best reading of it. 
+                    </p>
+                </div>
 
 
-                <h2 style="margin-top: 3em; margin-bottom: 3em;">Interpreting OpenVSlam's output.</h2>
+                <h2 class="blog-section-header">Interpreting OpenVSlam's output</h2>
 
 
 
-                <h2 style="margin-top: 3em; margin-bottom: 3em;">Getting a pipeline established.</h2>
+                <h2 class="blog-section-header">Getting a pipeline established</h2>
 
 
-                <h2 style="margin-top: 3em; margin-bottom: 3em;">Creating a discretized map for navigation.</h2>
+                <h2 class="blog-section-header">Creating a discretized map for navigation</h2>
 
 
             

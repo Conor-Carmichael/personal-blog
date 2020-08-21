@@ -1,0 +1,19 @@
+html{
+    font-family: 'Montserrat', sans-serif;
+}
+
+#main-content{
+    margin-top:4em;
+    width: 80%;
+}
+
+.caption{
+    color:grey;
+    font-style: italic;
+    text-align: center;
+}
+
+.blog-section-header{
+    margin-top: 3em;
+    margin-bottom: 1em;
+}
