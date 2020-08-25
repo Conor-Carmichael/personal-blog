@@ -19,17 +19,20 @@
 
       </head>
       <body>
-
             <!-- Navbar -->
             <nav class='navbar navbar-light bg-light'>
                 <a class='nav-link' href='./index.html'>Home</a>
-                <a class='nav-link' >Resume</a>
-                <a class='nav-link'>Education</a>
-                <a class='nav-link'>Projects</a>
+                <a class='nav-link' href="./placeholder.html">Resume</a>
+                <a class='nav-link' href="./placeholder.html">Education</a>
+                <a class='nav-link' href="./placeholder.html">Projects</a>
                 <a class='nav-link' href='./msc-project.html'>MSc Project Blog</a>
-                <a class='nav-link'>Contact</a>
-            </nav>
+                <a class='nav-link' href="./placeholder.html">Contact</a>
+          </nav>
 
+
+            <div class="alert alert-info">
+                <strong>Info!</strong> This site has only recently started being developed. Most pages will be created soon, check back to see more later.
+            </div>
 
             <!-- Main Content -->
             <img class='img-fluid' src='./resources/msc-project-images/museum_video_frame.png' />
@@ -128,13 +131,7 @@
                 
 
                 <h2 class="blog-section-header">Getting OpenVSlam running</h2>
-                <div class='row' class='blog-row ' id='main-content-row-four'>
-                    <p>A very long process, but after having a robot that could move about well, and a camera feed setup, next was to begin tring to SLAM it. I chose OpenVSlam as the SLAM package to use, as it is developed with the intention
-                        of being used with an equirectangular camera. To make this work, I needed to either publish my camera feed to the expected topic, or run a shell script and feed it a video of my environment. At first, I would do the former
-                        as I began trying to get it to work, and as I began to have a more sophisticated pipeline for everything I switched to using a pre-recorded video. This was more efficient, as I would need to re-run the the script on the video 
-                        a few times, trying to get the best reading of it. 
-                    </p>
-                </div>
+ 
 
 
                 <h2 class="blog-section-header">Interpreting OpenVSlam's output</h2>
