@@ -17,3 +17,15 @@ html{
     margin-top: 3em;
     margin-bottom: 1em;
 }
+
+.irrelevant_class{
+    color: lightslategray;
+}
+
+.class_list{
+    border: 2px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 16px;
+    margin-bottom: 1em;
+}
